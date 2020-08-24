@@ -1,0 +1,167 @@
+@import "../07-utilities/utilities-variables.scss";
+@import "../07-utilities/utilities-placeholders.scss";
+@import "../07-utilities/utilities-mixins.scss";
+
+.content__products {
+    display: grid;
+
+    height: 1500px;
+
+    position: relative;
+    bottom: 1470px;
+
+    @extend %middleToRight;
+
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+
+    font-family: $open-sans;
+
+    .content__products__filters__title {
+        display: grid;
+
+        @include gridColumnPlacement(1, 2);
+
+        font-size: 15px;
+        font-weight: 700;
+
+        text-transform: uppercase;
+    }
+
+    .content__products__filters__list {
+        display: inline-block;
+        margin-top: -950px;
+    }
+
+    hr {
+        @include gridColumnPlacement(1, 2);
+
+        width: 100%;
+        height: 1px;
+        border: none;
+        color: rgb(204, 204, 204);
+        background-color: rgb(204, 204, 204);
+
+        margin-top: -480px;
+        margin-bottom: -700px;
+    }
+
+    .content__products__filters {
+        display: grid;
+
+        @include gridColumnPlacement(1, 2);
+
+        font-size: 14px;
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        li {
+            display: block;
+            margin-bottom: 22px;
+
+            a {
+                color: black;
+            }
+
+            img {
+                width: 4px;
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+    .content__products__list {
+        display: grid;
+
+        @include gridColumnPlacement(2, end);
+
+        margin-top: 150px;
+
+        ul {
+            .filler {
+                display: inline-block;
+                width: 33%;
+                margin-bottom: 20px; 
+
+                .content__products__list__card {
+                    display: grid;
+
+                    grid-template-rows: 70% 15% 15%;
+
+                    margin-right: 10px;
+                    margin-bottom: 25px;
+
+                    .content__products__list__card__image {
+                        @include gridRowPlacement(1, 2);
+                    }
+
+                    .content__products__list__card__new {
+                        @include gridRowPlacement(2, 3);
+
+                        text-align: center;
+
+                        text-transform: uppercase;
+                        color: black;
+                        width: 270px;
+                        height: 25px;
+                        margin-top: 16px;
+                        padding-top: 10px;
+                        font-size: 14px;
+                        background-color: rgba(225, 225, 225, 0.3);
+                    }
+
+                    .content__products__list__card__desc--moreMargin {
+                        margin-top: 10px !important;
+                    }
+
+                    .content__products__list__card__desc--evenMoreMargin {
+                        margin-top: 7px !important;
+                    }
+
+                    .content__products__list__card__desc {
+                        color: black;
+                        font-size: 12px;
+                        margin-top: -12px;
+
+                        ul {
+                            display: grid;
+                            grid-template-columns: 80% 20%;
+
+                            .content__products__list__card__desc__text {
+                                @include gridColumnPlacement(1, 2);
+    
+                                text-align: left;
+    
+                                .content__products__list__card__desc__text--bold {
+                                    display: inline-block;
+                                    font-weight: 600;
+                                    margin-top: 5px;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        
+                            .content__products__list__card__desc__price {
+                                @include gridColumnPlacement(2, end);
+    
+                                margin-top: 20px;
+                                text-align: right;
+                                color: #ea695d;
+                                font-weight: 700;
+
+                                .content__products__list__card__desc__price--superscript {
+                                    position: relative;
+                                    bottom: 5px;
+
+                                    font-size: 9px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

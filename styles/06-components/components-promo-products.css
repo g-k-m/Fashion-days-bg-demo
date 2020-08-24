@@ -1,0 +1,37 @@
+.content__promo__products {
+  grid-column-start: middle;
+  grid-column-end: right;
+}
+
+.content__promo__products {
+  position: relative;
+  bottom: 1800px;
+}
+
+.content__promo__products .content__promo__products__list {
+  columns: 3;
+}
+
+.content__promo__products .content__promo__products__list li img {
+  width: 390px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-right: 6px;
+}
+
+.content__promo__products .content__promo__products__list li .content__promo__products__text {
+  font-size: 15px;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: black;
+  color: white;
+  display: inline-block;
+  width: 380px;
+  height: 50px;
+  position: relative;
+  bottom: 9px;
+}
+
+.content__promo__products .content__promo__products__list li:nth-child(3n) {
+  margin-right: 0;
+}

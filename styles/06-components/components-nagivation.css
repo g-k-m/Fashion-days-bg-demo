@@ -1,0 +1,124 @@
+.header__black ul {
+  grid-column-start: middle;
+  grid-column-end: right;
+}
+
+.header__white {
+  display: grid;
+  grid-template-columns: [left] 1.9fr [logo] 1.1fr [links] 2.8fr [search] 0.9fr [icons] auto [right] 1.5fr;
+  grid-template-rows: 100%;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  height: 80px;
+  font-family: "Open sans", Helvetica, Arial, sans-serif;
+}
+
+.header__white img.header__white__logo {
+  margin-top: 0.5rem;
+  grid-column-start: logo;
+  grid-column-end: links;
+  grid-row-start: 1;
+  grid-row-end: end;
+  width: 157px;
+}
+
+.header__white input.navbar__items__search {
+  margin-top: 0.5rem;
+  grid-column-start: search;
+  grid-column-end: icons;
+  grid-row-start: 1;
+  grid-row-end: end;
+  width: 5rem;
+  border: hidden;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 6px;
+}
+
+.header__white input.navbar__items__search:active, .header__white input.navbar__items__search:focus {
+  width: 8rem;
+  transition: width 1s ease-out;
+}
+
+.header__white ul.navbar__items__links {
+  grid-column-start: links;
+  grid-column-end: search;
+  grid-row-start: 1;
+  grid-row-end: end;
+}
+
+.header__white ul.navbar__items__links li {
+  margin: 0 0.75rem;
+}
+
+.header__white ul.navbar__items__links li a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.header__white ul.navbar__items__links li a:hover {
+  color: #ea695d;
+}
+
+.header__white ul.navbar__items__links li a.active {
+  color: #ea695d;
+}
+
+.header__white ul.navbar__items__icons {
+  margin-top: 0.5rem;
+  grid-column-start: icons;
+  grid-column-end: right;
+  grid-row-start: 1;
+  grid-row-end: end;
+}
+
+.header__white ul.navbar__items__icons .navbar__items__icons--first {
+  width: 25px;
+}
+
+.header__white ul.navbar__items__icons li {
+  margin: 0 1.25rem;
+}
+
+.header__white ul.navbar__items__icons li img {
+  width: 25px;
+}
+
+.header__black {
+  display: grid;
+  grid-template-columns: [left] 20% [middle] auto [right] 15%;
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-items: start;
+  background-color: black;
+  width: 100%;
+  height: 40px;
+  font-family: "Open sans", Helvetica, Arial, sans-serif;
+}
+
+.header__black ul {
+  margin-bottom: 0.3rem;
+  grid-row-start: 1;
+  grid-row-end: end;
+}
+
+.header__black ul li {
+  margin: 0 1rem;
+}
+
+.header__black ul li a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: white;
+}
+
+.header__black ul li.red a {
+  font-weight: 700;
+  color: red;
+}

@@ -1,0 +1,344 @@
+@import "../07-utilities/utilities-variables.scss";
+@import "../07-utilities/utilities-placeholders.scss";
+@import "../07-utilities/utilities-mixins.scss";
+
+%infoTitle {
+    text-transform: uppercase;
+    color: darkgrey;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: [left] 20% [middle] 60% [right] auto;
+    grid-template-rows: 50% 40% 10%;
+
+    position: relative;
+    top: 70px;
+
+    background-color: black;
+    width: 100%;
+    height: 580px;
+
+    font-family: $open-sans;
+
+    .footer__subscribe {
+        font-family: $open-sans;
+        font-size: 20px;
+
+        margin-top: 40px;
+        
+        @extend %middleToRight;
+        @include gridRowPlacement(1, 2);
+
+        display: grid;
+        grid-template-columns: [left] 25% [middle] auto [right] 28%;
+        grid-template-rows: 100%;
+
+        color: white;
+
+        .footer__subscribe__text {
+            @extend %leftToMiddle;
+            @include gridRowPlacement(1, end);
+
+            p {
+                margin-bottom: 7px;
+            }
+        }
+
+        .footer__subscribe__text--bold {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .footer__subscribe__email {
+            @extend %middleToRight;
+            @include gridRowPlacement(1, end);
+
+            height: 30px;
+            border: hidden;
+            font-size: 12px;
+            padding-left: 8px;
+
+            width: 520px;
+        }
+
+        .footer__subscribe__ageconsent {
+            @extend %middleToRight;
+            @include gridRowPlacement(1, end);
+
+            display: block;
+            height: 15px;
+
+            color: white;
+            font-size: 12px;
+
+            margin-top: 45px;
+        }
+
+        .footer__subscribe__women {
+            @extend %middleToRight;
+            @include gridRowPlacement(1, end);
+
+            display: block;
+            width: 250px;
+            height: 40px;
+
+            color: white;
+            background-color: rgb(229, 65, 49);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            margin-top: 85px;
+            
+            border: hidden;
+
+            &:hover {
+                animation-name: colorFill;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+
+                cursor: pointer;
+
+                @keyframes colorFill {
+                    0% {background-color: rgb(210, 65, 49);}
+                    20% {background-color: rgb(190, 65, 49);}
+                    40% {background-color: rgb(170, 65, 49);}
+                    60% {background-color: rgb(190, 65, 49);}
+                    80% {background-color: rgb(210, 65, 49);}
+                    100% {background-color: rgb(229, 65, 49);}
+                }
+
+                outline: none;
+            }
+        }
+
+        .footer__subscribe__men {
+            @extend .footer__subscribe__women;
+            margin-left: 280px;
+        }
+
+        .footer__subscribe__promo {
+            @extend %rightToEnd;
+            @include gridRowPlacement(1, end);
+
+            text-align: center;
+            font-size: 12px;
+            margin-left: 50px;
+
+            p {
+                margin-bottom: 3px;
+            }
+        }
+
+        hr {
+            @include gridColumnPlacement(left, end);
+            @include gridRowPlacement(1, end);
+
+            position: relative;
+            top: 170px;
+
+            border: 0.5px solid rgb(50, 50, 50);
+        }
+    }
+
+    .footer__links {
+        font-family: $open-sans;
+        font-size: 20px;
+
+        position: relative;
+        bottom: 50px;
+        
+        @extend %middleToRight;
+        @include gridRowPlacement(2, 3);
+
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 100%;
+
+        .footer__links__info__title {
+            @include gridColumnPlacement(1, 2);
+            @include gridRowPlacement(1, end);
+
+            @extend %infoTitle;
+        }
+
+        .footer__links__info {
+            @include gridColumnPlacement(1, 2);
+            @include gridRowPlacement(1, end);
+
+            position: relative;
+            top: 25px;
+
+            li {
+                line-height: 0.9;
+
+                a {
+                    color: darkgrey;
+                    font-size: 12px;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .footer__links__contacts__info__title {
+            @include gridColumnPlacement(2, 3);
+            @include gridRowPlacement(1, end);
+
+            @extend %infoTitle;
+        }
+
+        .footer__links__contacts__info {
+            @include gridColumnPlacement(2, 3);
+            @include gridRowPlacement(1, end);
+
+            position: relative;
+            top: 25px;
+
+            li {
+                line-height: 0.9;
+                color: darkgrey;
+                font-size: 12px;
+
+                p {
+                    margin-bottom: 8px;
+                }
+
+                a:hover {
+                    color: white;
+                }
+
+                &.footer__links__contacts__info__phone {
+                    font-weight: 600;
+
+                    .footer__links__contacts__info__phone--shortP {
+                        margin-top: -10px;
+                    }
+                }
+
+                &.footer__links__contacts__info__email{
+                    display: inline-block;
+                    margin-top: 8px;
+
+                    a {
+                        color: darkgrey;
+                        
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer__links__mobile__title {
+            @include gridColumnPlacement(3, 4);
+            @include gridRowPlacement(1, end);
+
+            @extend %infoTitle;
+        }
+
+        .footer__links__mobile__info {
+            @include gridColumnPlacement(3, 4);
+            @include gridRowPlacement(1, end);
+
+            position: relative;
+            top: 25px;
+
+            li {
+                p {
+                    margin-top: -5px;
+                }
+
+                a {
+                    line-height: 0.9;
+                    color: darkgrey;
+                    font-size: 12px;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .footer__links__social__title {
+            @include gridColumnPlacement(4, end);
+            @include gridRowPlacement(1, end);
+
+            @extend %infoTitle;
+        }
+
+        .footer__links__social__info {
+            @include gridColumnPlacement(4, end);
+            @include gridRowPlacement(1, end);
+
+            position: relative;
+            top: 25px;
+
+            li {
+                margin-right: 3px;
+                a {
+                    line-height: 0.9;
+                }
+
+                img {
+                    width: 20px;
+                    filter: invert(97%) sepia(97%) saturate(14%)
+                    hue-rotate(266deg) brightness(105%) contrast(104%);
+
+                    &.facebook {
+                        width: 15px;
+                    }
+
+                    &.pinterest {
+                        width: 22px;
+                    }
+
+                    &.twitter {
+                        width: 23px;
+                    }
+
+                    &.youtube {
+                        width: 26px;
+                    }
+                }
+            }
+        }
+
+        hr {
+            @include gridColumnPlacement(1, end);
+            @include gridRowPlacement(1, end);
+
+            position: relative;
+            top: 240px;
+
+            border: 0.5px solid rgb(50, 50, 50);
+        }
+    }
+
+    .footer__copyright {
+        font-family: $open-sans;
+        font-size: 20px;
+        
+        @extend %middleToRight;
+        @include gridRowPlacement(3, end);
+
+        display: grid;
+        grid-template-columns: 25% auto;
+        grid-template-rows: 100%;
+
+        p {
+            @include gridColumnPlacement(1, 2);
+            @include gridRowPlacement(1, end);
+
+            color: darkgrey;
+            font-size: 12px;
+        }
+    }
+}

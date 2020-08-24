@@ -1,0 +1,20 @@
+@import "../07-utilities/utilities-variables.scss";
+@import "../07-utilities/utilities-placeholders.scss";
+@import "../07-utilities/utilities-mixins.scss";
+
+.content__promo {
+    position: relative;
+    bottom: 1835px;
+
+    @extend %middleToRight;
+
+    img {
+        width: 1220px;
+    }
+}
+
+.content__promo__two {
+    @extend .content__promo;
+    
+    bottom: 1820px;
+}

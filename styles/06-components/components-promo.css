@@ -1,0 +1,17 @@
+.content__promo, .content__promo__two {
+  grid-column-start: middle;
+  grid-column-end: right;
+}
+
+.content__promo, .content__promo__two {
+  position: relative;
+  bottom: 1835px;
+}
+
+.content__promo img, .content__promo__two img {
+  width: 1220px;
+}
+
+.content__promo__two {
+  bottom: 1820px;
+}

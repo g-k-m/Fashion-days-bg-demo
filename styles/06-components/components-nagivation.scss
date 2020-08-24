@@ -1,0 +1,129 @@
+@import "../07-utilities/utilities-variables.scss";
+@import "../07-utilities/utilities-placeholders.scss";
+@import "../07-utilities/utilities-mixins.scss";
+
+.header__white {
+    display: grid;
+    grid-template-columns: [left] 1.9fr [logo] 1.1fr [links] 2.8fr [search] 0.9fr [icons] auto [right] 1.5fr;
+    grid-template-rows: 100%;
+    align-items: center;
+
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    height: 80px;
+
+    font-family: $open-sans;
+
+    img.header__white__logo {
+        margin-top: 0.5rem;
+
+        @include gridColumnPlacement(logo, links);
+        @include gridRowPlacement(1, end);
+
+        width: 157px;
+    }
+
+    input.navbar__items__search {
+        margin-top: 0.5rem;
+
+        @include gridColumnPlacement(search, icons);
+        @include gridRowPlacement(1, end);
+
+        width: 5rem;
+        border: hidden;
+        text-decoration: none;
+        border-bottom: 1px solid black;
+        padding-bottom: 6px;
+
+        &:active, &:focus {
+            width: 8rem;
+            transition: width 1s ease-out;
+        }
+    }
+
+    ul {
+        &.navbar__items__links {
+            @include gridColumnPlacement(links, search);
+            @include gridRowPlacement(1, end);
+
+            li {
+                margin: 0 0.75rem; 
+    
+                a {
+                    color: black;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+
+                a:hover {
+                    color: rgb(234, 105, 93);
+                }
+
+                a.active {
+                    color: rgb(234, 105, 93);
+                }
+            }
+        }
+
+        &.navbar__items__icons {
+            margin-top: 0.5rem;
+
+            @include gridColumnPlacement(icons, right);
+            @include gridRowPlacement(1, end);
+
+            .navbar__items__icons--first {
+                width: 25px;
+            }
+    
+            li {
+                margin: 0 1.25rem;
+    
+                img {
+                    width: 25px;
+                }
+            }
+        }
+    }
+}
+
+.header__black {
+    display: grid;
+    grid-template-columns: [left] 20% [middle] auto [right] 15%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: start;
+
+    background-color: black;
+    width: 100%;
+    height: 40px;
+
+    font-family: $open-sans;
+
+    ul {
+        margin-bottom: 0.3rem;
+
+        @extend %middleToRight;
+        @include gridRowPlacement(1, end);
+
+        li {
+            margin: 0 1rem;
+
+            a {
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0;
+                text-transform: uppercase;
+                color: white;
+            }
+        }
+
+        li.red {
+            a {
+                font-weight: 700;
+                color: red;
+            }
+        }
+    }
+}
